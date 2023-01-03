@@ -1,11 +1,13 @@
 # parsedmarc-dockerized
 
-Note: The standalone `parsedmarc` docker image on [DockerHub @ patschi/parsedmarc](https://hub.docker.com/r/patschi/parsedmarc) can also be used, if interested.
+Note: The standalone `parsedmarc` docker image on [DockerHub @ accolon/parsedmarc](https://hub.docker.com/r/accolon/parsedmarc) can also be used, if interested.
+
+This stack is based on [patschi's work](https://github.com/patschi/parsedmarc-dockerized) but also builds for and runs on ARM64 systems, e.g. the OCI Cloud Free Tier with Ampere CPUs. It includes a few other tweaks, too.
 
 ## Setup:
 1. Get basics together:
 ```
-git clone https://github.com/patschi/parsedmarc-dockerized.git /opt/parsedmarc-dockerized/
+git clone https://github.com/accolon/parsedmarc-dockerized.git /opt/parsedmarc-dockerized/
 cd /opt/parsedmarc-dockerized/ && cp data/conf/parsedmarc/config.sample.ini data/conf/parsedmarc/config.ini
 ```
 
@@ -37,4 +39,4 @@ docker-compose up -d
 
 ## Credits
 
-Built with awesome [parsedmarc](https://github.com/domainaware/checkdmarc), [Elasticsearch and Kibana](https://www.elastic.co/), [nginx](https://nginx.org), [Docker](https://docker.com) and [MaxMind GeoIP](https://dev.maxmind.com/geoip/geoip2/geolite2/).
+Built with awesome [parsedmarc](https://github.com/domainaware/checkdmarc), [Elasticsearch and Kibana](https://www.elastic.co/), [nginx](https://nginx.org), [Docker](https://docker.com) and [MaxMind GeoIP](https://dev.maxmind.com/geoip/geoip2/geolite2/). Based on [patschi's work](https://github.com/patschi/parsedmarc-dockerized).
