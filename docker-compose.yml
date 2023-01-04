@@ -94,10 +94,11 @@ services:
     image: nginx:alpine
     restart: always
     ports:
-      - "9999:443"
+      - "443:443" # change this if port 443 is already used
     volumes:
       - ./data/conf/nginx/site.conf:/etc/nginx/conf.d/default.conf:ro
       - ./data/conf/nginx/ssl/:/etc/nginx/ssl/:ro
+	  - ./data/conf/nginx/htpasswd:/etc/nginx/htpasswd:ro
     networks:
       - parsedmarc-network
     depends_on:
