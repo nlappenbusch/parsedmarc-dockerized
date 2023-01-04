@@ -82,7 +82,7 @@ services:
   geoipupdate:
     image: maxmindinc/geoipupdate
     env_file:
-      - geoipupdate.env
+      - ./data/conf/geoipupdate/geoipupdate.env
     environment:
       - "GEOIPUPDATE_EDITION_IDS=GeoLite2-ASN GeoLite2-City GeoLite2-Country"
       - GEOIPUPDATE_PRESERVE_FILE_TIMES=1

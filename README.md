@@ -16,13 +16,9 @@ cd /opt/parsedmarc-dockerized/ && cp data/conf/parsedmarc/config.sample.ini data
 nano data/conf/parsedmarc/config.ini
 ```
 
-3. Now we create an environment file, containing your geoipupdate settings from your [MaxMind account](https://www.maxmind.com/en/account/) to allow the container to pull the databases. For update cycles of the databases, please see [here](https://support.maxmind.com/geoip-faq/geoip2-and-geoip-legacy-database-updates/how-often-are-the-geoip2-and-geoip-legacy-databases-updated/). (Fill in your data!)
+3. Add your geoipupdate credentials from your [MaxMind account](https://www.maxmind.com/en/account/) to allow the container to pull the databases. For update cycles of the databases, please see [here](https://support.maxmind.com/hc/en-us/articles/4408216129947).
 ```
-cat > geoipupdate.env <<EOF
-GEOIPUPDATE_ACCOUNT_ID=HERE_GOES_YOUR_ACCOUNT_ID
-GEOIPUPDATE_LICENSE_KEY=HERE_GOES_YOUR_LICENSE_KEY
-GEOIPUPDATE_FREQUENCY=24
-EOF
+nano data/conf/geoipupdate/geoipupdate.env
 ```
 
 4. Change credentials for HTTP basic auth, e.g. this way (needs apache2-utils or httpd-tools):
