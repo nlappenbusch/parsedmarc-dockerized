@@ -98,7 +98,7 @@ services:
     volumes:
       - ./data/conf/nginx/site.conf:/etc/nginx/conf.d/default.conf:ro
       - ./data/conf/nginx/ssl/:/etc/nginx/ssl/:ro
-	  - ./data/conf/nginx/htpasswd:/etc/nginx/htpasswd:ro
+      - ./data/conf/nginx/htpasswd:/etc/nginx/htpasswd:ro
     networks:
       - parsedmarc-network
     depends_on:
