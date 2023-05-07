@@ -8,6 +8,10 @@ echo "Setting permissions..."
 chmod g+rwx -R /usr/share/elasticsearch/data/
 chgrp 0 -R /usr/share/elasticsearch/data/
 
+echo "## GEOIPUPDATE"
+echo "Setting permissions..."
+chown 1000:1000 -R /usr/share/GeoIP/
+
 echo "## NGINX"
 echo "Checking nginx certs..."
 cd /etc/nginx/ssl/

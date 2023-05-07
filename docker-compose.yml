@@ -8,6 +8,7 @@ services:
       - ./data/conf/parsedmarc/:/etc/parsedmarc/:rw
       - ./data/conf/nginx/ssl/:/etc/nginx/ssl/:rw
       - ./data/data/elasticsearch:/usr/share/elasticsearch/data/:rw
+      - ./data/data/geoipupdate/:/usr/share/GeoIP:z,rw
     networks:
       - parsedmarc-network
     healthcheck:
@@ -89,6 +90,9 @@ services:
     restart: always
     volumes:
       - ./data/data/geoipupdate/:/usr/share/GeoIP:z,rw
+    depends_on:
+      parsedmarc-init:
+        condition: service_healthy
 
   nginx:
     image: nginx:alpine
