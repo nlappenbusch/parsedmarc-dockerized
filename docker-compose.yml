@@ -80,7 +80,7 @@ services:
       start_period: 30s
 
   geoipupdate:
-    image: maxmindinc/geoipupdate
+    image: ghcr.io/maxmind/geoipupdate
     env_file:
       - ./data/conf/geoipupdate/geoipupdate.env
     environment:
