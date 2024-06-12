@@ -72,12 +72,7 @@ services:
     depends_on:
       elasticsearch:
         condition: service_healthy
-    healthcheck:
-      test: [ "CMD", "curl","-s" ,"-f", "http://localhost:5601/" ]
-      interval: 1m
-      timeout: 10s
-      retries: 3
-      start_period: 30s
+
 
   geoipupdate:
     image: ghcr.io/maxmind/geoipupdate
